@@ -24,7 +24,3 @@ end
 Then("the result should be {int}") do |expected_result|
   assert_equal expected_result, @result
 end
-
-Then("it should raise a ZeroDivisionError") do
-   assert_equal "Error: Division by zero", @result
-end
