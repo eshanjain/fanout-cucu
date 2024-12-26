@@ -4,6 +4,7 @@ batch:
   fast-fail: false
   build-fanout:
     parallelism: 3
+    ignore-failure: false
 
 phases:
   install:
@@ -19,8 +20,8 @@ phases:
       - echo 'prebuild'
   build:
     commands:
-      - echo 'Running Ruby Tests'
-      - codebuild-tests-run --test-command 'bundle exec rspec' --files-search "codebuild-glob-search 'spec/*_spec.rb'" --sharding-strategy 'equal-distribution'
+      - echo 'Running Cucumber Tests'
+      - cucumber
   post_build:
     commands:
       - echo "Would deploy here"
