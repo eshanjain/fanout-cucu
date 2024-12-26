@@ -23,7 +23,6 @@ end
 
 Then("the result should be {int}") do |expected_result|
   assert_equal expected_result, @result
-  expect(@result).to eq(expected_result)
 end
 
 Then("it should raise a ZeroDivisionError") do
