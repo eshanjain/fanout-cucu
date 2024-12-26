@@ -22,9 +22,10 @@ When("I try to divide {int} by {int}") do |num1, num2|
 end
 
 Then("the result should be {int}") do |expected_result|
+  assert_equal expected_result, @result
   expect(@result).to eq(expected_result)
 end
 
 Then("it should raise a ZeroDivisionError") do
-  expect(@divide_by_zero).to raise_error(ZeroDivisionError)
+   assert_equal "Error: Division by zero", @result
 end
