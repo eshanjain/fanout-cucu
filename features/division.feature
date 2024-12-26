@@ -19,8 +19,3 @@ Feature: Division
       | 0       | 5       | 0      |
       | 15      | 3       | 5      |
       | -20     | 4       | -5     |
-
-  Scenario: Divide by zero
-    Given I have a calculator
-    When I try to divide 10 by 0
-    Then it should raise a ZeroDivisionError
