@@ -1,0 +1,26 @@
+version: 0.2
+
+batch:
+  fast-fail: false
+  build-fanout:
+    parallelism: 3
+
+phases:
+  install:
+    commands:
+      - echo 'Installing Ruby dependencies'
+      - apt-get update
+      - apt-get install -y rbenv
+      - rbenv install 3.2.2
+      - gem install bundler -v 2.4.1
+      - bundle install
+  pre_build:
+    commands:
+      - echo 'prebuild'
+  build:
+    commands:
+      - echo 'Running Ruby Tests'
+      - codebuild-tests-run --test-command 'bundle exec rspec' --files-search "codebuild-glob-search 'spec/*_spec.rb'" --sharding-strategy 'equal-distribution'
+  post_build:
+    commands:
+      - echo "Would deploy here"
