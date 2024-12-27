@@ -19,7 +19,7 @@ phases:
     commands:
       - echo 'Running Cucumber Tests'
       - cucumber --init
-      - codebuild-tests-run --test-command "cucumber" --files-search "codebuild-glob-search '**/*.feature'"
+      - cucumber
   post_build:
     commands:
       - echo "Would deploy here"
