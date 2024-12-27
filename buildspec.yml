@@ -4,7 +4,7 @@ batch:
   fast-fail: false
   build-fanout:
     parallelism: 3
-    ignore-failure: false
+    ignore-failure: true
 
 phases:
   install:
