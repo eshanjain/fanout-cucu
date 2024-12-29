@@ -11,6 +11,7 @@ phases:
     commands:
       - echo 'Installing Ruby dependencies'
       - gem update bundler
+      - ridk install
       - bundle install
   pre_build:
     commands:
