@@ -10,6 +10,7 @@ phases:
   install:
     commands:
       - echo 'Installing Ruby dependencies'
+      - gem update bundler
       - bundle install
   pre_build:
     commands:
