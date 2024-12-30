@@ -3,7 +3,7 @@ version: 0.2
 batch:
   fast-fail: false
   build-fanout:
-    parallelism: 1
+    parallelism: 3
     ignore-failure: false
 
 phases:
